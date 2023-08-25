@@ -1,12 +1,11 @@
 API,Method,Response Code,Status,Response Time,Response Message,Response Data
 "
 "
-http://67.225.255.186:8010/keyword/delete/mango/17900,DELETE,200,Pass,1.2362887859344482,,{'detail': 'Keyword analysis deleted successfully'}
+Create campaign with correct data
+http://67.225.255.186:8010/campaigns/create/,POST,201,Pass,2.649303913116455,,"{'business_gmb_cid': '10469100432931003566', 'campaign_name': 'New API Campaign', 'client_name': 'usman112', 'keywords_for_analysis': 'Red Royal Electric,American restaurant', 'campaign_id': 17939, 'business_name': 'Sqa house'}"
 "
 "
-http://67.225.255.186:8010/keyword/delete/mango/17900,DELETE,400,Fail,1.1462900638580322,Bad Request,"{'detail': 'Failed to delete keyword, please try again'}"
-"
-"
-http://67.225.255.186:8010/keyword/delete/fast food restaurant/17912,DELETE,400,Fail,1.2004950046539307,Bad Request,"{'detail': 'Failed to delete keyword, please try again'}"
+Create campaign with incorrect GMB CID
+http://67.225.255.186:8010/campaigns/create/,POST,400,Fail,2.654287338256836,Bad Request,{'detail': 'Unable to create campaign!'}
 "
 "

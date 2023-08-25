@@ -6,11 +6,11 @@ import requests
 
 # Campaign ID which is deleted in first in delete api and get single campaign data with campaign id.
 
-Campaign_ID = "17852" 
+Campaign_ID = "17785" 
 
 # Campaign IDd which is used for other apis in which we need campaign id to get data
 
-Campaign_IDd = "17900"
+Campaign_IDd = "17910"
 
 # Campaign IDdd which is used to add 8th keyword in campaign already having 7 keywords
 
@@ -20,25 +20,29 @@ Campaign_IDdd = "17898"
 
 Campaign_IDdr = "17912"
 
+# Campaign IDdt which is used to deauthorize business. 
+
+Campaign_IDdt = "17938"
+
 # Client id is used to get client api
 
-Client_id = "2771"
+Client_id = "2753"
 
 # Keyword which is used to create keyword add keyword or delete keyword
 
-Keyword_new = "mango"
+Keyword_new = "mangoice"
 
 # Client name which is used to create new client
 
-Client_Name_New = "UsmanAPItesting112"
+Client_Name_New = "AimalAPI00261122"
 
 # ================================================
 
 # data which is used to create new campaign
 
-business_gmb_CID = "9864995318794434072"
-Campaign_name = "Five Guys13"
-Client_name = "SAMI"
+business_gmb_CID = "10469100432931003566"
+Campaign_name = "New API Campaign"
+Client_name = "Usman112"
 keywords_for_analysis = "Red Royal Electric,American restaurant"
 
 # =========================
@@ -48,6 +52,7 @@ api_list = [
     # ====////Admin API////=======
     
     {
+        "description": "Create campaign with correct data",
         "url": "http://67.225.255.186:8010/campaigns/create/",
         "method": "POST",
         "params":
@@ -60,6 +65,7 @@ api_list = [
     },
     
     {
+        "description": "Create campaign with incorrect GMB CID",
         "url": "http://67.225.255.186:8010/campaigns/create/",
         "method": "POST",
         "params":
@@ -74,11 +80,13 @@ api_list = [
     # =============================================================
     
     {
+        "description": "Get single Campaign by providing campaign ID",
         "url": f"http://67.225.255.186:8010/campaigns/{Campaign_ID}/",
         "method": "GET",
         "params": None
     },
     {
+        "description": "Get single Campaign by providing incorrect campaign ID",
         "url": "http://67.225.255.186:8010/campaigns/177/",
         "method": "GET",
         "params": None
@@ -88,6 +96,7 @@ api_list = [
     # =============================================================
     
     {
+        "description": "Get list of all Campaigns",
         "url": "http://67.225.255.186:8010/campaigns/list/all/",
         "method": "GET",
         "params": None
@@ -96,18 +105,21 @@ api_list = [
     # =============================================================
     
     {
+        "description": "Delete Campaign by providing campaign ID",
         "url": f"http://67.225.255.186:8010/campaigns/delete/{Campaign_ID}/",
         "method": "DELETE",
         "params": None
     },
     
     {
+        "description": "Delete Campaign by providing incorrect campaign ID",
         "url": f"http://67.225.255.186:8010/campaigns/delete/1289/",
         "method": "DELETE",
         "params": None
     },
     
     {
+        "description": "Delete Campaign by providing already deleted campaign ID",
         "url": f"http://67.225.255.186:8010/campaigns/delete/{Campaign_ID}/",
         "method": "DELETE",
         "params": None
@@ -116,6 +128,7 @@ api_list = [
     # =============================================================
     
     {
+        "description": "Create Client",
         "url": "http://67.225.255.186:8010/clients/create/",
         "method": "POST",
         "params":
@@ -124,6 +137,7 @@ api_list = [
                 }
     },
     {
+        "description": "Create Client with already created client name",
         "url": "http://67.225.255.186:8010/clients/create/",
         "method": "POST",
         "params":
@@ -135,11 +149,13 @@ api_list = [
     # ======================================
     
     {
+        "description": "Get Client by providing client ID",
         "url": f"http://67.225.255.186:8010/clients/{Client_id}/",
         "method": "GET",
         "params": None
     },
     {
+        "description": "Get Client by providing incorrect client ID",
         "url": f"http://67.225.255.186:8010/clients/128/",
         "method": "GET",
         "params": None
@@ -148,6 +164,7 @@ api_list = [
     # ======================================
     
     {
+        "description": "Get list of all Geo Gifs URLs",
         "url": "http://67.225.255.186:8010/geo/gifs/urls/list/",
         "method": "GET",
         "params":
@@ -160,11 +177,13 @@ api_list = [
     # ======================================
     
     {
+        "description": "Get list of Geo Gifs URLs by providing campaign ID",
         "url": f"http://67.225.255.186:8010/geo/gifs/urls/campaign/{Campaign_IDd}",
         "method": "GET",
         "params": None
     },
     {
+        "description": "Get list of Geo Gifs URLs by providing incorrect campaign ID",
         "url": f"http://67.225.255.186:8010/geo/gifs/urls/campaign/1205",
         "method": "GET",
         "params": None
@@ -173,6 +192,7 @@ api_list = [
     # ======================================
     
     {
+        "description": "Get list of all Geo Grids URLs",
         "url": "http://67.225.255.186:8010/geo/grid/urls/list/all/",
         "method": "GET",
         "params": None
@@ -182,12 +202,14 @@ api_list = [
     
     
     {
+        "description": "Get list of Geo Grids URLs by providing campaign ID",
         "url": f"http://67.225.255.186:8010/geo/grid/urls/{Campaign_IDd}/",
         "method": "GET",
         "params": None
     },
     
     {
+        "description": "Get list of Geo Grids URLs by providing incorrect campaign ID",
         "url": f"http://67.225.255.186:8010/geo/grid/urls/1496/",
         "method": "GET",
         "params": None
@@ -196,12 +218,14 @@ api_list = [
     # ======================================
     
     {
+        "description": "Get list of latedt Grids URLs by providing campaign ID",
         "url": f"http://67.225.255.186:8010/geo/grid/urls/latest/{Campaign_IDd}",
         "method": "GET",
         "params": None
     },
     
     {
+        "description": "Get list of latest Grids URLs by providing incorrect campaign ID",
         "url": f"http://67.225.255.186:8010/geo/grid/urls/latest/8573",
         "method": "GET",
         "params": None
@@ -210,6 +234,7 @@ api_list = [
     # ======================================
     
     {
+        "description": "Add keyword in campaign by providing campaign id",
         "url": "http://67.225.255.186:8010/keyword/create/",
         "method": "POST",
         "params":
@@ -219,6 +244,7 @@ api_list = [
             }
     },
     {
+        "description": "Add keyword which is already added in campaign by providing campaign id",
         "url": "http://67.225.255.186:8010/keyword/create/",
         "method": "POST",
         "params":
@@ -228,6 +254,7 @@ api_list = [
             }
     },
     {
+        "description": "Add keyword in campaign already having 7 keywords by providing campaign id",
         "url": "http://67.225.255.186:8010/keyword/create/",
         "method": "POST",
         "params":
@@ -240,18 +267,42 @@ api_list = [
     # ======================================
     
     {
+        "description": "Delete keyword from campaign by providing campaign ID",
         "url": f"http://67.225.255.186:8010/keyword/delete/{Keyword_new}/{Campaign_IDd}",
         "method": "DELETE",
         "params": None
     },
     {
+        "description": "Delete keyword which is already deleted from campaign by providing campaign ID",
         "url": f"http://67.225.255.186:8010/keyword/delete/{Keyword_new}/{Campaign_IDd}",
         "method": "DELETE",
         "params": None
     },
     {
+        "description": "Try to delete last keyword of campaign by providing campaign ID",
         "url": f"http://67.225.255.186:8010/keyword/delete/fast food restaurant/{Campaign_IDdr}",
         "method": "DELETE",
+        "params": None
+    },
+    
+    # ======================================
+    
+    {
+        "description": "Deauthroize business by providing campaign ID",
+        "url": f"http://67.225.255.186:8010/campaigns/business/deauthorization/{Campaign_IDdt}",
+        "method": "GET",
+        "params": None
+    },
+    {
+        "description": "Deauthroize business which is already deauthroize by providing campaign ID",
+        "url": f"http://67.225.255.186:8010/campaigns/business/deauthorization/{Campaign_IDdt}",
+        "method": "GET",
+        "params": None
+    },
+    {
+        "description": "Deauthroize business by providing incorrect campaign ID",
+        "url": f"http://67.225.255.186:8010/campaigns/business/deauthorization/{Campaign_IDdr}",
+        "method": "GET",
         "params": None
     },
     
@@ -320,11 +371,11 @@ def hit_apis_and_save_results(api_list, auth_token, csv_filename):
     with open(csv_filename, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(['API', 'Method', 'Response Code', 'Status', 'Response Time', 'Response Message', 'Response Data'])
-        writer.writerow('\n')
-        
-        
+        writer.writerow(['\n'])
+
         # Iterate over each API in the list
         for api in api_list:
+            description = api.get('description', 'No description provided')
             url = api['url']
             method = api['method']
             params = api['params']
@@ -335,6 +386,9 @@ def hit_apis_and_save_results(api_list, auth_token, csv_filename):
             }
 
             try:
+                # Print the API description
+                print(f"API Description: {description}")
+
                 # Make the API request
                 start_time = time.time()
                 response = requests.request(method, url, json=params, headers=headers)
@@ -351,13 +405,14 @@ def hit_apis_and_save_results(api_list, auth_token, csv_filename):
                 response_data = response.json() if response.headers.get('content-type') == 'application/json' else response.text
 
                 # Write the results to the CSV file
+                writer.writerow([description])
                 writer.writerow([url, method, response_code, status, response_time, response_message, response_data])
-                writer.writerow('\n')
+                writer.writerow(['\n'])
 
                 # Print the results in the terminal
                 print(f"API: {url}, Method: {method}, Response Code: {response_code}, Status: {status}, "
                       f"Response Time: {response_time:.2f}, Response Message: {response_message}, Response Data: {response_data}")
-                
+
                 # Wait for 1 second before the next API hit
                 time.sleep(1)
 
