@@ -6,11 +6,11 @@ import requests
 
 # Campaign ID which is deleted in first in delete api and get single campaign data with campaign id.
 
-Campaign_ID = "17785" 
+Campaign_ID = "17937" 
 
 # Campaign IDd which is used for other apis in which we need campaign id to get data
 
-Campaign_IDd = "17910"
+Campaign_IDd = "17941"
 
 # Campaign IDdd which is used to add 8th keyword in campaign already having 7 keywords
 
@@ -34,7 +34,7 @@ Keyword_new = "mangoice"
 
 # Client name which is used to create new client
 
-Client_Name_New = "AimalAPI00261122"
+Client_Name_New = "AimalRazaAPI00261122"
 
 # ================================================
 
@@ -42,7 +42,7 @@ Client_Name_New = "AimalAPI00261122"
 
 business_gmb_CID = "10469100432931003566"
 Campaign_name = "New API Campaign"
-Client_name = "Usman112"
+Client_name = "Usman1122323"
 keywords_for_analysis = "Red Royal Electric,American restaurant"
 
 # =========================
@@ -52,7 +52,7 @@ api_list = [
     # ====////Admin API////=======
     
     {
-        "description": "Create campaign with correct data",
+        "description": "Description: Create campaign with correct data",
         "url": "http://67.225.255.186:8010/campaigns/create/",
         "method": "POST",
         "params":
@@ -65,7 +65,7 @@ api_list = [
     },
     
     {
-        "description": "Create campaign with incorrect GMB CID",
+        "description": "Description: Create campaign with incorrect GMB CID",
         "url": "http://67.225.255.186:8010/campaigns/create/",
         "method": "POST",
         "params":
@@ -80,13 +80,13 @@ api_list = [
     # =============================================================
     
     {
-        "description": "Get single Campaign by providing campaign ID",
+        "description": "Description: Get single Campaign by providing campaign ID",
         "url": f"http://67.225.255.186:8010/campaigns/{Campaign_ID}/",
         "method": "GET",
         "params": None
     },
     {
-        "description": "Get single Campaign by providing incorrect campaign ID",
+        "description": "Description: Get single Campaign by providing incorrect campaign ID",
         "url": "http://67.225.255.186:8010/campaigns/177/",
         "method": "GET",
         "params": None
@@ -96,7 +96,7 @@ api_list = [
     # =============================================================
     
     {
-        "description": "Get list of all Campaigns",
+        "description": "Description: Get list of all Campaigns",
         "url": "http://67.225.255.186:8010/campaigns/list/all/",
         "method": "GET",
         "params": None
@@ -105,21 +105,21 @@ api_list = [
     # =============================================================
     
     {
-        "description": "Delete Campaign by providing campaign ID",
+        "description": "Description: Delete Campaign by providing campaign ID",
         "url": f"http://67.225.255.186:8010/campaigns/delete/{Campaign_ID}/",
         "method": "DELETE",
         "params": None
     },
     
     {
-        "description": "Delete Campaign by providing incorrect campaign ID",
+        "description": "Description: Delete Campaign by providing incorrect campaign ID",
         "url": f"http://67.225.255.186:8010/campaigns/delete/1289/",
         "method": "DELETE",
         "params": None
     },
     
     {
-        "description": "Delete Campaign by providing already deleted campaign ID",
+        "description": "Description: Delete Campaign by providing already deleted campaign ID",
         "url": f"http://67.225.255.186:8010/campaigns/delete/{Campaign_ID}/",
         "method": "DELETE",
         "params": None
@@ -128,7 +128,7 @@ api_list = [
     # =============================================================
     
     {
-        "description": "Create Client",
+        "description": "Description: Create Client",
         "url": "http://67.225.255.186:8010/clients/create/",
         "method": "POST",
         "params":
@@ -137,7 +137,7 @@ api_list = [
                 }
     },
     {
-        "description": "Create Client with already created client name",
+        "description": "Description: Create Client with already created client name",
         "url": "http://67.225.255.186:8010/clients/create/",
         "method": "POST",
         "params":
@@ -149,13 +149,13 @@ api_list = [
     # ======================================
     
     {
-        "description": "Get Client by providing client ID",
+        "description": "Description: Get Client by providing client ID",
         "url": f"http://67.225.255.186:8010/clients/{Client_id}/",
         "method": "GET",
         "params": None
     },
     {
-        "description": "Get Client by providing incorrect client ID",
+        "description": "Description: Get Client by providing incorrect client ID",
         "url": f"http://67.225.255.186:8010/clients/128/",
         "method": "GET",
         "params": None
@@ -164,7 +164,7 @@ api_list = [
     # ======================================
     
     {
-        "description": "Get list of all Geo Gifs URLs",
+        "description": "Description: Get list of all Geo Gifs URLs",
         "url": "http://67.225.255.186:8010/geo/gifs/urls/list/",
         "method": "GET",
         "params":
@@ -177,13 +177,13 @@ api_list = [
     # ======================================
     
     {
-        "description": "Get list of Geo Gifs URLs by providing campaign ID",
+        "description": "Description: Get list of Geo Gifs URLs by providing campaign ID",
         "url": f"http://67.225.255.186:8010/geo/gifs/urls/campaign/{Campaign_IDd}",
         "method": "GET",
         "params": None
     },
     {
-        "description": "Get list of Geo Gifs URLs by providing incorrect campaign ID",
+        "description": "Description: Get list of Geo Gifs URLs by providing incorrect campaign ID",
         "url": f"http://67.225.255.186:8010/geo/gifs/urls/campaign/1205",
         "method": "GET",
         "params": None
@@ -192,7 +192,7 @@ api_list = [
     # ======================================
     
     {
-        "description": "Get list of all Geo Grids URLs",
+        "description": "Description: Get list of all Geo Grids URLs",
         "url": "http://67.225.255.186:8010/geo/grid/urls/list/all/",
         "method": "GET",
         "params": None
@@ -202,14 +202,14 @@ api_list = [
     
     
     {
-        "description": "Get list of Geo Grids URLs by providing campaign ID",
+        "description": "Description: Get list of Geo Grids URLs by providing campaign ID",
         "url": f"http://67.225.255.186:8010/geo/grid/urls/{Campaign_IDd}/",
         "method": "GET",
         "params": None
     },
     
     {
-        "description": "Get list of Geo Grids URLs by providing incorrect campaign ID",
+        "description": "Description: Get list of Geo Grids URLs by providing incorrect campaign ID",
         "url": f"http://67.225.255.186:8010/geo/grid/urls/1496/",
         "method": "GET",
         "params": None
@@ -218,14 +218,14 @@ api_list = [
     # ======================================
     
     {
-        "description": "Get list of latedt Grids URLs by providing campaign ID",
+        "description": "Description: Get list of latedt Grids URLs by providing campaign ID",
         "url": f"http://67.225.255.186:8010/geo/grid/urls/latest/{Campaign_IDd}",
         "method": "GET",
         "params": None
     },
     
     {
-        "description": "Get list of latest Grids URLs by providing incorrect campaign ID",
+        "description": "Description: Get list of latest Grids URLs by providing incorrect campaign ID",
         "url": f"http://67.225.255.186:8010/geo/grid/urls/latest/8573",
         "method": "GET",
         "params": None
@@ -234,7 +234,7 @@ api_list = [
     # ======================================
     
     {
-        "description": "Add keyword in campaign by providing campaign id",
+        "description": "Description: Add keyword in campaign by providing campaign id",
         "url": "http://67.225.255.186:8010/keyword/create/",
         "method": "POST",
         "params":
@@ -244,7 +244,7 @@ api_list = [
             }
     },
     {
-        "description": "Add keyword which is already added in campaign by providing campaign id",
+        "description": "Description: Add keyword which is already added in campaign by providing campaign id",
         "url": "http://67.225.255.186:8010/keyword/create/",
         "method": "POST",
         "params":
@@ -254,7 +254,7 @@ api_list = [
             }
     },
     {
-        "description": "Add keyword in campaign already having 7 keywords by providing campaign id",
+        "description": "Description: Add keyword in campaign already having 7 keywords by providing campaign id",
         "url": "http://67.225.255.186:8010/keyword/create/",
         "method": "POST",
         "params":
@@ -267,19 +267,19 @@ api_list = [
     # ======================================
     
     {
-        "description": "Delete keyword from campaign by providing campaign ID",
+        "description": "Description: Delete keyword from campaign by providing campaign ID",
         "url": f"http://67.225.255.186:8010/keyword/delete/{Keyword_new}/{Campaign_IDd}",
         "method": "DELETE",
         "params": None
     },
     {
-        "description": "Delete keyword which is already deleted from campaign by providing campaign ID",
+        "description": "Description: Delete keyword which is already deleted from campaign by providing campaign ID",
         "url": f"http://67.225.255.186:8010/keyword/delete/{Keyword_new}/{Campaign_IDd}",
         "method": "DELETE",
         "params": None
     },
     {
-        "description": "Try to delete last keyword of campaign by providing campaign ID",
+        "description": "Description: Try to delete last keyword of campaign by providing campaign ID",
         "url": f"http://67.225.255.186:8010/keyword/delete/fast food restaurant/{Campaign_IDdr}",
         "method": "DELETE",
         "params": None
@@ -288,19 +288,19 @@ api_list = [
     # ======================================
     
     {
-        "description": "Deauthroize business by providing campaign ID",
+        "description": "Description: Deauthroize business by providing campaign ID",
         "url": f"http://67.225.255.186:8010/campaigns/business/deauthorization/{Campaign_IDdt}",
         "method": "GET",
         "params": None
     },
     {
-        "description": "Deauthroize business which is already deauthroize by providing campaign ID",
+        "description": "Description: Deauthroize business which is already deauthroize by providing campaign ID",
         "url": f"http://67.225.255.186:8010/campaigns/business/deauthorization/{Campaign_IDdt}",
         "method": "GET",
         "params": None
     },
     {
-        "description": "Deauthroize business by providing incorrect campaign ID",
+        "description": "Description: Deauthroize business by providing incorrect campaign ID",
         "url": f"http://67.225.255.186:8010/campaigns/business/deauthorization/{Campaign_IDdr}",
         "method": "GET",
         "params": None
