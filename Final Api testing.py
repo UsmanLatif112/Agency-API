@@ -6,7 +6,7 @@ import requests
 
 # Campaign ID which is deleted in first in delete api and get single campaign data with campaign id.
 
-Campaign_ID = "17917" 
+Campaign_ID = "17949" 
 
 # Campaign IDd which is used for other apis in which we need campaign id to get data
 
@@ -30,11 +30,11 @@ Client_id = "2753"
 
 # Keyword which is used to create keyword add keyword or delete keyword
 
-Keyword_new = "mangoice88"
+Keyword_new = "mangoice"
 
 # Client name which is used to create new client
 
-Client_Name_New = "AimalRazaAPIdemotest0026"
+Client_Name_New = "waseem002601122"
 
 # ================================================
 
@@ -364,6 +364,78 @@ custom_error_messages = {
 # Initialize the response codes dictionary
 response_codes_dict = {}
 
+# Function to hit the APIs and save results in a CSV file
+def hit_apis_and_save_results(api_list, auth_token, csv_filename):
+    with open(csv_filename, 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['API', 'Method', 'Response Code', 'Result (according to response code)', 'Response Time', 'Response Message', 'Response Data', 'Response Data Result'])
+        writer.writerow(['\n'])
+
+        # Iterate over each API in the list
+        for api in api_list:
+            description = api.get('description', 'No description provided')
+            url = api['url']
+            method = api['method']
+            params = api['params']
+
+            headers = {
+                'Authorization': f'Bearer {auth_token}',
+                'Content-Type': 'application/json'
+            }
+
+            try:
+                # Print the API description
+                print("==============================================")
+                print("   ")
+                print(f"API Description: {description}")
+
+                # Make the API request
+                start_time = time.time()
+                response = requests.request(method, url, json=params, headers=headers)
+                response_code = response.status_code
+                response_time = time.time() - start_time
+
+                response_message = custom_error_messages.get(response_code, '')
+                response_data = response.json() if response.headers.get('content-type') == 'application/json' else response.text
+
+                # Determine the result based on response data
+                if response_data == {'items': [], 'total': 0, 'page': 1, 'size': 50}:
+                    response_result = "Fail"
+                else:
+                    response_result = "Pass"
+
+                result_according_to_response_code = "Pass" if response_code in [200, 201, 202] else "Fail"
+
+                # Write the results to the CSV file
+                writer.writerow([description])
+                writer.writerow([url, method, response_code, result_according_to_response_code, response_time, response_message, response_data, response_result])
+                writer.writerow(['\n'])
+
+                # Print the results in the terminal
+                print(f"API: {url}, Method: {method}, Response Code: {response_code}, Result (according to response code): {result_according_to_response_code}, "
+                      f"Response Time: {response_time:.2f}, Response Message: {response_message}, Response Data: {response_data}, Response Data Result: {response_result}")
+
+                # Wait for 1 second before the next API hit
+                time.sleep(1)
+
+            except Exception as e:
+                print("==============================================")
+                print("   ")
+                print(f"Error occurred while processing API: {url}, Method: {method}, Error: {e}")
+
+        print("==============================================")
+        print("   ")
+        print("API hits completed.")
+
+# Call the function to hit the APIs and save the results
+hit_apis_and_save_results(api_list, auth_token, 'API_result.csv')
+
+
+
+# =====================================================================================
+
+
+
 # ================================================
 
 # # Function to hit the APIs and save results in a CSV file
@@ -433,67 +505,70 @@ response_codes_dict = {}
 # ============================
 
 
-# Function to hit the APIs and save results in a CSV file
-def hit_apis_and_save_results(api_list, auth_token, csv_filename):
-    with open(csv_filename, 'w', newline='') as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerow(['API', 'Method', 'Response Code', 'Status', 'Response Time', 'Response Message', 'Response Data'])
-        writer.writerow(['\n'])
+# # Function to hit the APIs and save results in a CSV file
+# def hit_apis_and_save_results(api_list, auth_token, csv_filename):
+#     with open(csv_filename, 'w', newline='') as csvfile:
+#         writer = csv.writer(csvfile)
+#         writer.writerow(['API', 'Method', 'Response Code', 'Status', 'Response Time', 'Response Message', 'Response Data'])
+#         writer.writerow(['\n'])
 
-        # Iterate over each API in the list
-        for api in api_list:
-            description = api.get('description', 'No description provided')
-            url = api['url']
-            method = api['method']
-            params = api['params']
+#         # Iterate over each API in the list
+#         for api in api_list:
+#             description = api.get('description', 'No description provided')
+#             url = api['url']
+#             method = api['method']
+#             params = api['params']
 
-            headers = {
-                'Authorization': f'Bearer {auth_token}',
-                'Content-Type': 'application/json'
-            }
+#             headers = {
+#                 'Authorization': f'Bearer {auth_token}',
+#                 'Content-Type': 'application/json'
+#             }
 
-            try:
-                # Print the API description
-                print("==============================================")
-                print("   ")
-                print(f"API Description: {description}")
+#             try:
+#                 # Print the API description
+#                 print("==============================================")
+#                 print("   ")
+#                 print(f"API Description: {description}")
 
-                # Make the API request
-                start_time = time.time()
-                response = requests.request(method, url, json=params, headers=headers)
-                response_code = response.status_code
-                response_time = time.time() - start_time
+#                 # Make the API request
+#                 start_time = time.time()
+#                 response = requests.request(method, url, json=params, headers=headers)
+#                 response_code = response.status_code
+#                 response_time = time.time() - start_time
 
-                response_message = custom_error_messages.get(response_code, '')
-                response_data = response.json() if response.headers.get('content-type') == 'application/json' else response.text
+#                 response_message = custom_error_messages.get(response_code, '')
+#                 response_data = response.json() if response.headers.get('content-type') == 'application/json' else response.text
 
-                # Check if the response is successful or not
-                if 200 <= response_code < 300 and not (response_data.get('items') == [] and response_data.get('total') == 0):
-                    status = 'Pass'
-                else:
-                    status = 'Fail'
+#                 # Check if the response is successful or not
+#                 if 200 <= response_code < 300 and not (response_data.get('items') == [] and response_data.get('total') == 0):
+#                     status = 'Pass'
+#                 else:
+#                     status = 'Fail'
 
-                # Write the results to the CSV file
-                writer.writerow([description])
-                writer.writerow([url, method, response_code, status, response_time, response_message, response_data])
-                writer.writerow(['\n'])
+#                 # Write the results to the CSV file
+#                 writer.writerow([description])
+#                 writer.writerow([url, method, response_code, status, response_time, response_message, response_data])
+#                 writer.writerow(['\n'])
 
-                # Print the results in the terminal
+#                 # Print the results in the terminal
                 
-                print(f"API: {url}, Method: {method}, Response Code: {response_code}, Status: {status}, "
-                      f"Response Time: {response_time:.2f}, Response Message: {response_message}, Response Data: {response_data}")
+#                 print(f"API: {url}, Method: {method}, Response Code: {response_code}, Status: {status}, "
+#                       f"Response Time: {response_time:.2f}, Response Message: {response_message}, Response Data: {response_data}")
 
-                # Wait for 1 second before the next API hit
-                time.sleep(1)
+#                 # Wait for 1 second before the next API hit
+#                 time.sleep(1)
 
-            except Exception as e:
-                print("==============================================")
-                print("   ")
-                print(f"Error occurred while processing API: {url}, Method: {method}, Error: {e}")
+#             except Exception as e:
+#                 print("==============================================")
+#                 print("   ")
+#                 print(f"Error occurred while processing API: {url}, Method: {method}, Error: {e}")
 
-        print("==============================================")
-        print("   ")
-        print("API hits completed.")
+#         print("==============================================")
+#         print("   ")
+#         print("API hits completed.")
 
-# Call the function to hit the APIs and save the results
-hit_apis_and_save_results(api_list, auth_token, 'API_result.csv')
+# # Call the function to hit the APIs and save the results
+# hit_apis_and_save_results(api_list, auth_token, 'API_result.csv')
+
+
+# =============================================================================================
