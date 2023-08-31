@@ -2,39 +2,45 @@ import csv
 import time
 import requests
 
+# http://69.167.136.19:8010
+
 # ================================================
 
 # Campaign ID which is deleted in first in delete api and get single campaign data with campaign id.
 
-Campaign_ID = "17949" 
+Campaign_ID = "18302" 
 
 # Campaign IDd which is used for other apis in which we need campaign id to get data
+# (Dont Delete Cam1)
 
-Campaign_IDd = "17941"
+Campaign_IDd = "18299" 
 
 # Campaign IDdd which is used to add 8th keyword in campaign already having 7 keywords
+# (Dont Delete Cam2)
 
-Campaign_IDdd = "17898"
+Campaign_IDdd = "18268"
 
-# Campaign IDdr which is used to delete last keyword of campaign 
+# Campaign IDdr which is used to delete last keyword of campaign
+# (Dont Delete Cam3)
 
-Campaign_IDdr = "17912"
+Campaign_IDdr = "18113"
 
-# Campaign IDdt which is used to deauthorize business. 
+# Campaign IDdt which is used to deauthorize business.
+# (Business campaign Del 4)
 
-Campaign_IDdt = "17938"
+Campaign_IDdt = "18301"
 
 # Client id is used to get client api
 
-Client_id = "2753"
+Client_id = "1196"
 
 # Keyword which is used to create keyword add keyword or delete keyword
 
-Keyword_new = "mangoice"
+Keyword_new = "API TEST"
 
 # Client name which is used to create new client
 
-Client_Name_New = "waseem002601122"
+Client_Name_New = "EricAPI0026"
 
 # ================================================
 
@@ -42,7 +48,7 @@ Client_Name_New = "waseem002601122"
 
 business_gmb_CID = "10469100432931003566"
 Campaign_name = "New API Campaign"
-Client_name = "APidemotest0026"
+Client_name = "APITEST"
 keywords_for_analysis = "Red Royal Electric,American restaurant"
 
 # =========================
@@ -53,7 +59,7 @@ api_list = [
     
     {
         "description": "Description: Create campaign with correct data",
-        "url": "http://67.225.255.186:8010/campaigns/create/",
+        "url": "http://69.167.136.19:8010/campaigns/create/",
         "method": "POST",
         "params":
             {
@@ -66,7 +72,7 @@ api_list = [
     
     {
         "description": "Description: Create campaign with incorrect GMB CID",
-        "url": "http://67.225.255.186:8010/campaigns/create/",
+        "url": "http://69.167.136.19:8010/campaigns/create/",
         "method": "POST",
         "params":
             {
@@ -81,13 +87,13 @@ api_list = [
     
     {
         "description": "Description: Get campaign by providing campaign ID",
-        "url": f"http://67.225.255.186:8010/campaigns/{Campaign_ID}/",
+        "url": f"http://69.167.136.19:8010/campaigns/{Campaign_ID}/",
         "method": "GET",
         "params": None
     },
     {
         "description": "Description: Get campaign by providing incorrect campaign ID",
-        "url": "http://67.225.255.186:8010/campaigns/177/",
+        "url": "http://69.167.136.19:8010/campaigns/177/",
         "method": "GET",
         "params": None
     },
@@ -97,7 +103,7 @@ api_list = [
     
     {
         "description": "Description: Get list of all campaigns",
-        "url": "http://67.225.255.186:8010/campaigns/list/all/",
+        "url": "http://69.167.136.19:8010/campaigns/list/all/",
         "method": "GET",
         "params": None
     },
@@ -106,21 +112,21 @@ api_list = [
     
     {
         "description": "Description: Delete campaign by providing campaign ID",
-        "url": f"http://67.225.255.186:8010/campaigns/delete/{Campaign_ID}/",
+        "url": f"http://69.167.136.19:8010/campaigns/delete/{Campaign_ID}/",
         "method": "DELETE",
         "params": None
     },
     
     {
         "description": "Description: Delete campaign by providing incorrect campaign ID",
-        "url": f"http://67.225.255.186:8010/campaigns/delete/1289/",
+        "url": f"http://69.167.136.19:8010/campaigns/delete/1289/",
         "method": "DELETE",
         "params": None
     },
     
     {
         "description": "Description: Delete campaign by providing already deleted campaign ID",
-        "url": f"http://67.225.255.186:8010/campaigns/delete/{Campaign_ID}/",
+        "url": f"http://69.167.136.19:8010/campaigns/delete/{Campaign_ID}/",
         "method": "DELETE",
         "params": None
     },
@@ -129,7 +135,7 @@ api_list = [
     
     {
         "description": "Description: Create Client",
-        "url": "http://67.225.255.186:8010/clients/create/",
+        "url": "http://69.167.136.19:8010/clients/create/",
         "method": "POST",
         "params":
             {
@@ -138,7 +144,7 @@ api_list = [
     },
     {
         "description": "Description: Create client with already created client name",
-        "url": "http://67.225.255.186:8010/clients/create/",
+        "url": "http://69.167.136.19:8010/clients/create/",
         "method": "POST",
         "params":
             {
@@ -150,13 +156,24 @@ api_list = [
     
     {
         "description": "Description: Get client by providing client ID",
-        "url": f"http://67.225.255.186:8010/clients/{Client_id}/",
+        "url": f"http://69.167.136.19:8010/clients/{Client_id}/",
         "method": "GET",
         "params": None
     },
     {
         "description": "Description: Get client by providing incorrect client ID",
-        "url": f"http://67.225.255.186:8010/clients/128/",
+        "url": f"http://69.167.136.19:8010/clients/128/",
+        "method": "GET",
+        "params": None
+    },
+    
+    # ======================================
+    
+    # ======================================
+    
+    {
+        "description": "Description: Get list of all clients",
+        "url": f"http://69.167.136.19:8010/clients/clients/list/",
         "method": "GET",
         "params": None
     },
@@ -165,7 +182,7 @@ api_list = [
     
     {
         "description": "Description: Get list of all Geo Gifs URLs",
-        "url": "http://67.225.255.186:8010/geo/gifs/urls/list/",
+        "url": "http://69.167.136.19:8010/geo/gifs/urls/list/",
         "method": "GET",
         "params":
             {
@@ -178,13 +195,13 @@ api_list = [
     
     {
         "description": "Description: Get list of Geo Gifs URLs by providing campaign ID",
-        "url": f"http://67.225.255.186:8010/geo/gifs/urls/campaign/{Campaign_IDd}",
+        "url": f"http://69.167.136.19:8010/geo/gifs/urls/campaign/{Campaign_IDd}",
         "method": "GET",
         "params": None
     },
     {
         "description": "Description: Get list of Geo Gifs URLs by providing incorrect campaign ID",
-        "url": f"http://67.225.255.186:8010/geo/gifs/urls/campaign/1205",
+        "url": f"http://69.167.136.19:8010/geo/gifs/urls/campaign/1205",
         "method": "GET",
         "params": None
     },
@@ -193,7 +210,7 @@ api_list = [
     
     {
         "description": "Description: Get list of all Geo Grids URLs",
-        "url": "http://67.225.255.186:8010/geo/grid/urls/list/all/",
+        "url": "http://69.167.136.19:8010/geo/grid/urls/list/all/",
         "method": "GET",
         "params": None
     },
@@ -203,14 +220,14 @@ api_list = [
     
     {
         "description": "Description: Get list of Geo Grids URLs by providing campaign ID",
-        "url": f"http://67.225.255.186:8010/geo/grid/urls/{Campaign_IDd}/",
+        "url": f"http://69.167.136.19:8010/geo/grid/urls/{Campaign_IDd}/",
         "method": "GET",
         "params": None
     },
     
     {
         "description": "Description: Get list of Geo Grids URLs by providing incorrect campaign ID",
-        "url": f"http://67.225.255.186:8010/geo/grid/urls/1496/",
+        "url": f"http://69.167.136.19:8010/geo/grid/urls/1496/",
         "method": "GET",
         "params": None
     },
@@ -219,14 +236,14 @@ api_list = [
     
     {
         "description": "Description: Get list of latest Grids URLs by providing campaign ID",
-        "url": f"http://67.225.255.186:8010/geo/grid/urls/latest/{Campaign_IDd}",
+        "url": f"http://69.167.136.19:8010/geo/grid/urls/latest/{Campaign_IDd}",
         "method": "GET",
         "params": None
     },
     
     {
         "description": "Description: Get list of latest Grids URLs by providing incorrect campaign ID",
-        "url": f"http://67.225.255.186:8010/geo/grid/urls/latest/8573",
+        "url": f"http://69.167.136.19:8010/geo/grid/urls/latest/8573",
         "method": "GET",
         "params": None
     },
@@ -235,7 +252,7 @@ api_list = [
     
     {
         "description": "Description: Add keyword in campaign by providing campaign id",
-        "url": "http://67.225.255.186:8010/keyword/create/",
+        "url": "http://69.167.136.19:8010/keyword/create/",
         "method": "POST",
         "params":
              {
@@ -245,7 +262,7 @@ api_list = [
     },
     {
         "description": "Description: Add keyword which is already added in campaign by providing campaign id",
-        "url": "http://67.225.255.186:8010/keyword/create/",
+        "url": "http://69.167.136.19:8010/keyword/create/",
         "method": "POST",
         "params":
              {
@@ -255,7 +272,7 @@ api_list = [
     },
     {
         "description": "Description: Add keyword in campaign already having 7 keywords by providing campaign id",
-        "url": "http://67.225.255.186:8010/keyword/create/",
+        "url": "http://69.167.136.19:8010/keyword/create/",
         "method": "POST",
         "params":
             {
@@ -268,19 +285,19 @@ api_list = [
     
     {
         "description": "Description: Delete keyword from campaign by providing campaign ID",
-        "url": f"http://67.225.255.186:8010/keyword/delete/{Keyword_new}/{Campaign_IDd}",
+        "url": f"http://69.167.136.19:8010/keyword/delete/{Keyword_new}/{Campaign_IDd}",
         "method": "DELETE",
         "params": None
     },
     {
         "description": "Description: Delete keyword which is already deleted from campaign by providing campaign ID",
-        "url": f"http://67.225.255.186:8010/keyword/delete/{Keyword_new}/{Campaign_IDd}",
+        "url": f"http://69.167.136.19:8010/keyword/delete/{Keyword_new}/{Campaign_IDd}",
         "method": "DELETE",
         "params": None
     },
     {
         "description": "Description: Try to delete last keyword of campaign by providing campaign ID",
-        "url": f"http://67.225.255.186:8010/keyword/delete/fast food restaurant/{Campaign_IDdr}",
+        "url": f"http://69.167.136.19:8010/keyword/delete/fast food restaurant/{Campaign_IDdr}",
         "method": "DELETE",
         "params": None
     },
@@ -289,19 +306,19 @@ api_list = [
     
     {
         "description": "Description: Deauthroize business by providing campaign ID",
-        "url": f"http://67.225.255.186:8010/campaigns/business/deauthorization/{Campaign_IDdt}",
+        "url": f"http://69.167.136.19:8010/campaigns/business/deauthorization/{Campaign_IDdt}",
         "method": "GET",
         "params": None
     },
     {
         "description": "Description: Deauthroize business which is already deauthroize by providing campaign ID",
-        "url": f"http://67.225.255.186:8010/campaigns/business/deauthorization/{Campaign_IDdt}",
+        "url": f"http://69.167.136.19:8010/campaigns/business/deauthorization/{Campaign_IDdt}",
         "method": "GET",
         "params": None
     },
     {
         "description": "Description: Deauthroize business by providing incorrect campaign ID",
-        "url": f"http://67.225.255.186:8010/campaigns/business/deauthorization/{Campaign_IDdr}",
+        "url": f"http://69.167.136.19:8010/campaigns/business/deauthorization/{Campaign_IDdr}",
         "method": "GET",
         "params": None
     },
@@ -312,7 +329,7 @@ api_list = [
 
 # ======================================
 
-auth_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBdXRvbWF0aW9uIEFQSSIsIlRPS0VOIjoiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnpkV0lpT2lKQmRYUnZiV0YwYVc5dUlFRlFTU0lzSW5OamIzQmxjeUk2VzEwc0ltbGtJam95TmpreUxDSmxlSEFpT2pFMk9UUTNOekV3TURaOS52cHE0cHR6c195eG9taGl3Mkg3dWRNMFN0TGhzQ3BRakNmN3BWZ0lRZzhVIiwiZXhwIjoyMDA3OTcxMDA3fQ.yXEKEb1Wgw-YB3EltnQRhCNsmsQ--MD9Vlk4FAteUoc"
+auth_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBaW1hbFJhemExIiwiVE9LRU4iOiJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKemRXSWlPaUpCYVcxaGJGSmhlbUV4SWl3aWMyTnZjR1Z6SWpwYlhTd2lhV1FpT2pZMU1Dd2laWGh3SWpveE5qazFOakk1TWpBd2ZRLnhabkpkdWdqYkxCbFltSUE0M1Z0VnhTODR5ZWpwRXM2M0tYNXJKdGI5eHciLCJleHAiOjIwMDg4MjkxOTl9.suMlOq_ur684uZvbGGsCXWZOZSLUiKiMeA6X9WSTT00"
 
 # ======================================
 
