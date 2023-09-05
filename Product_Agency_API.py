@@ -8,7 +8,7 @@ import requests
 
 # Campaign ID which is deleted in first in delete api and get single campaign data with campaign id.
 
-Campaign_ID = "18302" 
+Campaign_ID = "18332" 
 
 # Campaign IDd which is used for other apis in which we need campaign id to get data
 # (Dont Delete Cam1)
@@ -36,11 +36,11 @@ Client_id = "1196"
 
 # Keyword which is used to create keyword add keyword or delete keyword
 
-Keyword_new = "API TEST"
+Keyword_new = "APITEST0114 "
 
 # Client name which is used to create new client
 
-Client_Name_New = "EricAPI0026"
+Client_Name_New = "ERIC_API_USMAN_01134"
 
 # ================================================
 
@@ -297,7 +297,7 @@ api_list = [
     },
     {
         "description": "Description: Try to delete last keyword of campaign by providing campaign ID",
-        "url": f"http://69.167.136.19:8010/keyword/delete/fast food restaurant/{Campaign_IDdr}",
+        "url": f"http://69.167.136.19:8010/keyword/delete/one/{Campaign_IDdr}",
         "method": "DELETE",
         "params": None
     },
