@@ -8,7 +8,7 @@ import requests
 
 # Campaign ID which is deleted in first in delete api and get single campaign data with campaign id.
 
-Campaign_ID = "18332" 
+Campaign_ID = "18619"
 
 # Campaign IDd which is used for other apis in which we need campaign id to get data
 # (Dont Delete Cam1)
@@ -36,11 +36,11 @@ Client_id = "1196"
 
 # Keyword which is used to create keyword add keyword or delete keyword
 
-Keyword_new = "APITEST0114 "
+Keyword_new = "CHatbotKings18619"
 
 # Client name which is used to create new client
 
-Client_Name_New = "ERIC_API_USMAN_01134"
+Client_Name_New = "CHatbotKings18619"
 
 # ================================================
 
@@ -57,46 +57,46 @@ api_list = [
     
     # ====////Admin API////=======
     
-    {
-        "description": "Description: Create campaign with correct data",
-        "url": "http://69.167.136.19:8010/campaigns/create/",
-        "method": "POST",
-        "params":
-            {
-            "business_gmb_cid": business_gmb_CID,
-            "campaign_name": Campaign_name,
-            "client_name": Client_name,
-            "keywords_for_analysis": keywords_for_analysis
-            }
-    },
+    # {
+    #     "description": "Description: Create campaign with correct data",
+    #     "url": "http://69.167.136.19:8010/campaigns/create/",
+    #     "method": "POST",
+    #     "params":
+    #         {
+    #         "business_gmb_cid": business_gmb_CID,
+    #         "campaign_name": Campaign_name,
+    #         "client_name": Client_name,
+    #         "keywords_for_analysis": keywords_for_analysis
+    #         }
+    # },
     
-    {
-        "description": "Description: Create campaign with incorrect GMB CID",
-        "url": "http://69.167.136.19:8010/campaigns/create/",
-        "method": "POST",
-        "params":
-            {
-            "business_gmb_cid": "98649953187944340729864995318",
-            "campaign_name": Campaign_name,
-            "client_name": Client_name,
-            "keywords_for_analysis": keywords_for_analysis
-            }
-    },
+    # {
+    #     "description": "Description: Create campaign with incorrect GMB CID",
+    #     "url": "http://69.167.136.19:8010/campaigns/create/",
+    #     "method": "POST",
+    #     "params":
+    #         {
+    #         "business_gmb_cid": "98649953187944340729864995318",
+    #         "campaign_name": Campaign_name,
+    #         "client_name": Client_name,
+    #         "keywords_for_analysis": keywords_for_analysis
+    #         }
+    # },
     
-    # =============================================================
+    # # =============================================================
     
-    {
-        "description": "Description: Get campaign by providing campaign ID",
-        "url": f"http://69.167.136.19:8010/campaigns/{Campaign_ID}/",
-        "method": "GET",
-        "params": None
-    },
-    {
-        "description": "Description: Get campaign by providing incorrect campaign ID",
-        "url": "http://69.167.136.19:8010/campaigns/177/",
-        "method": "GET",
-        "params": None
-    },
+    # {
+    #     "description": "Description: Get campaign by providing campaign ID",
+    #     "url": f"http://69.167.136.19:8010/campaigns/{Campaign_ID}/",
+    #     "method": "GET",
+    #     "params": None
+    # },
+    # {
+    #     "description": "Description: Get campaign by providing incorrect campaign ID",
+    #     "url": "http://69.167.136.19:8010/campaigns/177/",
+    #     "method": "GET",
+    #     "params": None
+    # },
     
     
     # =============================================================
@@ -108,220 +108,220 @@ api_list = [
         "params": None
     },
     
-    # =============================================================
+    # # =============================================================
     
-    {
-        "description": "Description: Delete campaign by providing campaign ID",
-        "url": f"http://69.167.136.19:8010/campaigns/delete/{Campaign_ID}/",
-        "method": "DELETE",
-        "params": None
-    },
+    # {
+    #     "description": "Description: Delete campaign by providing campaign ID",
+    #     "url": f"http://69.167.136.19:8010/campaigns/delete/{Campaign_ID}/",
+    #     "method": "DELETE",
+    #     "params": None
+    # },
     
-    {
-        "description": "Description: Delete campaign by providing incorrect campaign ID",
-        "url": f"http://69.167.136.19:8010/campaigns/delete/1289/",
-        "method": "DELETE",
-        "params": None
-    },
+    # {
+    #     "description": "Description: Delete campaign by providing incorrect campaign ID",
+    #     "url": f"http://69.167.136.19:8010/campaigns/delete/1289/",
+    #     "method": "DELETE",
+    #     "params": None
+    # },
     
-    {
-        "description": "Description: Delete campaign by providing already deleted campaign ID",
-        "url": f"http://69.167.136.19:8010/campaigns/delete/{Campaign_ID}/",
-        "method": "DELETE",
-        "params": None
-    },
+    # {
+    #     "description": "Description: Delete campaign by providing already deleted campaign ID",
+    #     "url": f"http://69.167.136.19:8010/campaigns/delete/{Campaign_ID}/",
+    #     "method": "DELETE",
+    #     "params": None
+    # },
     
-    # =============================================================
+    # # =============================================================
     
-    {
-        "description": "Description: Create Client",
-        "url": "http://69.167.136.19:8010/clients/create/",
-        "method": "POST",
-        "params":
-            {
-                "client_name": Client_Name_New
-                }
-    },
-    {
-        "description": "Description: Create client with already created client name",
-        "url": "http://69.167.136.19:8010/clients/create/",
-        "method": "POST",
-        "params":
-            {
-                "client_name": Client_Name_New
-                }
-    },
+    # {
+    #     "description": "Description: Create Client",
+    #     "url": "http://69.167.136.19:8010/clients/create/",
+    #     "method": "POST",
+    #     "params":
+    #         {
+    #             "client_name": Client_Name_New
+    #             }
+    # },
+    # {
+    #     "description": "Description: Create client with already created client name",
+    #     "url": "http://69.167.136.19:8010/clients/create/",
+    #     "method": "POST",
+    #     "params":
+    #         {
+    #             "client_name": Client_Name_New
+    #             }
+    # },
     
-    # ======================================
+    # # ======================================
     
-    {
-        "description": "Description: Get client by providing client ID",
-        "url": f"http://69.167.136.19:8010/clients/{Client_id}/",
-        "method": "GET",
-        "params": None
-    },
-    {
-        "description": "Description: Get client by providing incorrect client ID",
-        "url": f"http://69.167.136.19:8010/clients/128/",
-        "method": "GET",
-        "params": None
-    },
+    # {
+    #     "description": "Description: Get client by providing client ID",
+    #     "url": f"http://69.167.136.19:8010/clients/{Client_id}/",
+    #     "method": "GET",
+    #     "params": None
+    # },
+    # {
+    #     "description": "Description: Get client by providing incorrect client ID",
+    #     "url": f"http://69.167.136.19:8010/clients/128/",
+    #     "method": "GET",
+    #     "params": None
+    # },
     
-    # ======================================
+    # # ======================================
     
-    # ======================================
+    # # ======================================
     
-    {
-        "description": "Description: Get list of all clients",
-        "url": f"http://69.167.136.19:8010/clients/clients/list/",
-        "method": "GET",
-        "params": None
-    },
+    # {
+    #     "description": "Description: Get list of all clients",
+    #     "url": f"http://69.167.136.19:8010/clients/clients/list/",
+    #     "method": "GET",
+    #     "params": None
+    # },
     
-    # ======================================
+    # # ======================================
     
-    {
-        "description": "Description: Get list of all Geo Gifs URLs",
-        "url": "http://69.167.136.19:8010/geo/gifs/urls/list/",
-        "method": "GET",
-        "params":
-            {
-            "Page": 1,
-            "Size": 50
-            }   
-    },
+    # {
+    #     "description": "Description: Get list of all Geo Gifs URLs",
+    #     "url": "http://69.167.136.19:8010/geo/gifs/urls/list/",
+    #     "method": "GET",
+    #     "params":
+    #         {
+    #         "Page": 1,
+    #         "Size": 50
+    #         }   
+    # },
     
-    # ======================================
+    # # ======================================
     
-    {
-        "description": "Description: Get list of Geo Gifs URLs by providing campaign ID",
-        "url": f"http://69.167.136.19:8010/geo/gifs/urls/campaign/{Campaign_IDd}",
-        "method": "GET",
-        "params": None
-    },
-    {
-        "description": "Description: Get list of Geo Gifs URLs by providing incorrect campaign ID",
-        "url": f"http://69.167.136.19:8010/geo/gifs/urls/campaign/1205",
-        "method": "GET",
-        "params": None
-    },
+    # {
+    #     "description": "Description: Get list of Geo Gifs URLs by providing campaign ID",
+    #     "url": f"http://69.167.136.19:8010/geo/gifs/urls/campaign/{Campaign_IDd}",
+    #     "method": "GET",
+    #     "params": None
+    # },
+    # {
+    #     "description": "Description: Get list of Geo Gifs URLs by providing incorrect campaign ID",
+    #     "url": f"http://69.167.136.19:8010/geo/gifs/urls/campaign/1205",
+    #     "method": "GET",
+    #     "params": None
+    # },
     
-    # ======================================
+    # # ======================================
     
-    {
-        "description": "Description: Get list of all Geo Grids URLs",
-        "url": "http://69.167.136.19:8010/geo/grid/urls/list/all/",
-        "method": "GET",
-        "params": None
-    },
+    # {
+    #     "description": "Description: Get list of all Geo Grids URLs",
+    #     "url": "http://69.167.136.19:8010/geo/grid/urls/list/all/",
+    #     "method": "GET",
+    #     "params": None
+    # },
     
-    # ======================================
+    # # ======================================
     
     
-    {
-        "description": "Description: Get list of Geo Grids URLs by providing campaign ID",
-        "url": f"http://69.167.136.19:8010/geo/grid/urls/{Campaign_IDd}/",
-        "method": "GET",
-        "params": None
-    },
+    # {
+    #     "description": "Description: Get list of Geo Grids URLs by providing campaign ID",
+    #     "url": f"http://69.167.136.19:8010/geo/grid/urls/{Campaign_IDd}/",
+    #     "method": "GET",
+    #     "params": None
+    # },
     
-    {
-        "description": "Description: Get list of Geo Grids URLs by providing incorrect campaign ID",
-        "url": f"http://69.167.136.19:8010/geo/grid/urls/1496/",
-        "method": "GET",
-        "params": None
-    },
+    # {
+    #     "description": "Description: Get list of Geo Grids URLs by providing incorrect campaign ID",
+    #     "url": f"http://69.167.136.19:8010/geo/grid/urls/1496/",
+    #     "method": "GET",
+    #     "params": None
+    # },
     
-    # ======================================
+    # # ======================================
     
-    {
-        "description": "Description: Get list of latest Grids URLs by providing campaign ID",
-        "url": f"http://69.167.136.19:8010/geo/grid/urls/latest/{Campaign_IDd}",
-        "method": "GET",
-        "params": None
-    },
+    # {
+    #     "description": "Description: Get list of latest Grids URLs by providing campaign ID",
+    #     "url": f"http://69.167.136.19:8010/geo/grid/urls/latest/{Campaign_IDd}",
+    #     "method": "GET",
+    #     "params": None
+    # },
     
-    {
-        "description": "Description: Get list of latest Grids URLs by providing incorrect campaign ID",
-        "url": f"http://69.167.136.19:8010/geo/grid/urls/latest/8573",
-        "method": "GET",
-        "params": None
-    },
+    # {
+    #     "description": "Description: Get list of latest Grids URLs by providing incorrect campaign ID",
+    #     "url": f"http://69.167.136.19:8010/geo/grid/urls/latest/8573",
+    #     "method": "GET",
+    #     "params": None
+    # },
     
-    # ======================================
+    # # ======================================
     
-    {
-        "description": "Description: Add keyword in campaign by providing campaign id",
-        "url": "http://69.167.136.19:8010/keyword/create/",
-        "method": "POST",
-        "params":
-             {
-            "campaign_id": Campaign_IDd,
-            "keyword": Keyword_new
-            }
-    },
-    {
-        "description": "Description: Add keyword which is already added in campaign by providing campaign id",
-        "url": "http://69.167.136.19:8010/keyword/create/",
-        "method": "POST",
-        "params":
-             {
-            "campaign_id": Campaign_IDd,
-            "keyword": Keyword_new
-            }
-    },
-    {
-        "description": "Description: Add keyword in campaign already having 7 keywords by providing campaign id",
-        "url": "http://69.167.136.19:8010/keyword/create/",
-        "method": "POST",
-        "params":
-            {
-            "campaign_id": Campaign_IDdd,
-            "keyword": "Pathan12323"
-            }
-    },
+    # {
+    #     "description": "Description: Add keyword in campaign by providing campaign id",
+    #     "url": "http://69.167.136.19:8010/keyword/create/",
+    #     "method": "POST",
+    #     "params":
+    #          {
+    #         "campaign_id": Campaign_IDd,
+    #         "keyword": Keyword_new
+    #         }
+    # },
+    # {
+    #     "description": "Description: Add keyword which is already added in campaign by providing campaign id",
+    #     "url": "http://69.167.136.19:8010/keyword/create/",
+    #     "method": "POST",
+    #     "params":
+    #          {
+    #         "campaign_id": Campaign_IDd,
+    #         "keyword": Keyword_new
+    #         }
+    # },
+    # {
+    #     "description": "Description: Add keyword in campaign already having 7 keywords by providing campaign id",
+    #     "url": "http://69.167.136.19:8010/keyword/create/",
+    #     "method": "POST",
+    #     "params":
+    #         {
+    #         "campaign_id": Campaign_IDdd,
+    #         "keyword": "Pathan12323"
+    #         }
+    # },
     
-    # ======================================
+    # # ======================================
     
-    {
-        "description": "Description: Delete keyword from campaign by providing campaign ID",
-        "url": f"http://69.167.136.19:8010/keyword/delete/{Keyword_new}/{Campaign_IDd}",
-        "method": "DELETE",
-        "params": None
-    },
-    {
-        "description": "Description: Delete keyword which is already deleted from campaign by providing campaign ID",
-        "url": f"http://69.167.136.19:8010/keyword/delete/{Keyword_new}/{Campaign_IDd}",
-        "method": "DELETE",
-        "params": None
-    },
-    {
-        "description": "Description: Try to delete last keyword of campaign by providing campaign ID",
-        "url": f"http://69.167.136.19:8010/keyword/delete/one/{Campaign_IDdr}",
-        "method": "DELETE",
-        "params": None
-    },
+    # {
+    #     "description": "Description: Delete keyword from campaign by providing campaign ID",
+    #     "url": f"http://69.167.136.19:8010/keyword/delete/{Keyword_new}/{Campaign_IDd}",
+    #     "method": "DELETE",
+    #     "params": None
+    # },
+    # {
+    #     "description": "Description: Delete keyword which is already deleted from campaign by providing campaign ID",
+    #     "url": f"http://69.167.136.19:8010/keyword/delete/{Keyword_new}/{Campaign_IDd}",
+    #     "method": "DELETE",
+    #     "params": None
+    # },
+    # {
+    #     "description": "Description: Try to delete last keyword of campaign by providing campaign ID",
+    #     "url": f"http://69.167.136.19:8010/keyword/delete/one/{Campaign_IDdr}",
+    #     "method": "DELETE",
+    #     "params": None
+    # },
     
-    # ======================================
+    # # ======================================
     
-    {
-        "description": "Description: Deauthroize business by providing campaign ID",
-        "url": f"http://69.167.136.19:8010/campaigns/business/deauthorization/{Campaign_IDdt}",
-        "method": "GET",
-        "params": None
-    },
-    {
-        "description": "Description: Deauthroize business which is already deauthroize by providing campaign ID",
-        "url": f"http://69.167.136.19:8010/campaigns/business/deauthorization/{Campaign_IDdt}",
-        "method": "GET",
-        "params": None
-    },
-    {
-        "description": "Description: Deauthroize business by providing incorrect campaign ID",
-        "url": f"http://69.167.136.19:8010/campaigns/business/deauthorization/{Campaign_IDdr}",
-        "method": "GET",
-        "params": None
-    },
+    # {
+    #     "description": "Description: Deauthroize business by providing campaign ID",
+    #     "url": f"http://69.167.136.19:8010/campaigns/business/deauthorization/{Campaign_IDdt}",
+    #     "method": "GET",
+    #     "params": None
+    # },
+    # {
+    #     "description": "Description: Deauthroize business which is already deauthroize by providing campaign ID",
+    #     "url": f"http://69.167.136.19:8010/campaigns/business/deauthorization/{Campaign_IDdt}",
+    #     "method": "GET",
+    #     "params": None
+    # },
+    # {
+    #     "description": "Description: Deauthroize business by providing incorrect campaign ID",
+    #     "url": f"http://69.167.136.19:8010/campaigns/business/deauthorization/{Campaign_IDdr}",
+    #     "method": "GET",
+    #     "params": None
+    # },
     
     # ======================================
     
@@ -329,7 +329,7 @@ api_list = [
 
 # ======================================
 
-auth_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBaW1hbFJhemExIiwiVE9LRU4iOiJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKemRXSWlPaUpCYVcxaGJGSmhlbUV4SWl3aWMyTnZjR1Z6SWpwYlhTd2lhV1FpT2pZMU1Dd2laWGh3SWpveE5qazFOakk1TWpBd2ZRLnhabkpkdWdqYkxCbFltSUE0M1Z0VnhTODR5ZWpwRXM2M0tYNXJKdGI5eHciLCJleHAiOjIwMDg4MjkxOTl9.suMlOq_ur684uZvbGGsCXWZOZSLUiKiMeA6X9WSTT00"
+auth_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBaW1hbFJhemExIiwiVE9LRU4iOiJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKemRXSWlPaUpCYVcxaGJGSmhlbUV4SWl3aWMyTnZjR1Z6SWpwYlhTd2lhV1FpT2pZMU1Dd2laWGh3SWpveE5qazVOakE1TURrM2ZRLm5qbnJuT2t4MWhQUUg0U05TU3F0V3NHQ3c5RUdqanBUZjhtTDN3aS1XUU0iLCJleHAiOjIwMTI4MDkwOTd9.V25OMkist-NDTqyxlBXFoJJjoqjGLVelDLRhp7bITIU"
 
 # ======================================
 
@@ -381,7 +381,8 @@ response_codes_dict = {}
 
 # Function to hit the APIs and save results in a CSV file
 def hit_apis_and_save_results(api_list, auth_token, csv_filename):
-    with open(csv_filename, 'w', newline='') as csvfile:
+    # with open(csv_filename, 'w', newline='') as csvfile:
+    with open(csv_filename, 'w', newline='', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(['API', 'Method', 'Response Code', 'Result (according to response code)', 'Response Time', 'Response Message', 'Response Data', 'Response Data Result'])
         writer.writerow(['\n'])
@@ -406,6 +407,7 @@ def hit_apis_and_save_results(api_list, auth_token, csv_filename):
 
                 # Make the API request
                 start_time = time.time()
+                
                 response = requests.request(method, url, json=params, headers=headers)
                 response_code = response.status_code
                 response_time = time.time() - start_time
